@@ -7,9 +7,13 @@ android {
     namespace = "com.example.p31c"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.p31c"
-        minSdk = 34
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
