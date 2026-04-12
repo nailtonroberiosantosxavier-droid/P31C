@@ -1,21 +1,21 @@
 package com.example.p31c
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
+import com.example.p31c.databinding.ActivityMainBinding
 
-class RFC : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rfc)
-        supportActionBar?.hide()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val webView = findViewById<WebView>(R.id.webView)
-
-        webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://www.rfc-editor.org/rfc-index.html")
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.loadUrl("https://www.google.com")
+        binding.webView.settings.javaScriptEnabled = true
     }
 }
